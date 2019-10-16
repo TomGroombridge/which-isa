@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { GlobalStyles, Fonts } from '@zopauk/react-components';
 import styled from 'styled-components';
@@ -27,7 +27,7 @@ const App = () => {
         <Switch>
           <Route exact path='/'>
             <FormLayout>
-              <LandingPage />
+              <LandingPage setQuestionStep={setQuestionStep} />
             </FormLayout>
           </Route>
 
