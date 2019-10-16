@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../Questions/Layout';
+import Layout from '../QuestionForm/Layout';
 import { Heading } from '@zopauk/react-components';
 
 const Confirmation = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Heading, FlexCol, FlexRow } from '@zopauk/react-components';
 import SButton from '../Button';
 import { useHistory } from 'react-router-dom';
-import Layout from '../Questions/Layout';
+import Layout from '../QuestionForm/Layout';
 
 const LandingPage = () => {
   let history = useHistory();
