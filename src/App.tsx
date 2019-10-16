@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
-import { GlobalStyles, Fonts, Heading, colors } from '@zopauk/react-components';
+import { GlobalStyles, Fonts } from '@zopauk/react-components';
 import styled from 'styled-components';
-import QuestionOne from './components/questions/QuestionOne';
-import QuestionTwo from './components/questions/QuestionTwo';
-import QuestionThree from './components/questions/QuestionThree';
+import QuestionOne from './components/Questions/QuestionOne';
+import QuestionTwo from './components/Questions/QuestionTwo';
+import QuestionThree from './components/Questions/QuestionThree';
 import Confirmation from './components/Confirmation';
+import TopNav from './components/TopNav';
+import LandingPage from './components/LandingPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
@@ -20,16 +22,23 @@ const App = () => {
     <div className='App'>
       <GlobalStyles />
       <Fonts />
-      <SHeading as={'h2'}>PASTUSO</SHeading>
       <Router>
+        <TopNav />
         <Switch>
           <Route exact path='/'>
+            <FormLayout>
+              <LandingPage />
+            </FormLayout>
+          </Route>
+
+          <Route exact path='/steps'>
             <FormLayout>
               <QuestionOne questionStep={questionStep} nextStep={nextStep} />
               <QuestionTwo questionStep={questionStep} nextStep={nextStep} />
               <QuestionThree questionStep={questionStep} />
             </FormLayout>
           </Route>
+
           <Route exact path='/confirmation'>
             <FormLayout>
               <Confirmation />
@@ -47,15 +56,6 @@ const FormLayout = styled.div`
   @media screen and (max-width: 768px) {
     top: 10vh;
   }
-`;
-
-const SHeading = styled(Heading)`
-  text-align: left;
-  left: 10px;
-  top: 10px;
-  position: relative;
-  margin-top: 0px;
-  color: ${colors.neutral.white};
 `;
 
 export default App;
