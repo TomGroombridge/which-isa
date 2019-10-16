@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react": "^16.9.8",
+    "@types/styled-components": "^4.1.19",
+    "@zopauk/react-components": "^2.3.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.0",
+    "typescript": "^3.6.4"
   },
   "scripts": {
     "start": "react-scripts start",
