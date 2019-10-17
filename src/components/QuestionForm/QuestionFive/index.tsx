@@ -3,11 +3,11 @@ import { Heading, FlexCol, FlexRow } from '@zopauk/react-components';
 import SButton from '../../Button';
 import Layout from '../Layout';
 
-const QuestionThree = ({ questionStep, nextStep }: any) => {
+const QuestionFive = ({ questionStep, nextStep }: any) => {
   return (
-    <Layout active={questionStep === 3}>
+    <Layout active={questionStep === 5}>
       <Heading color={'#FFFFFF'} as={'h3'}>
-        Will you need access to your investment quickly?
+        Do you own a property already?
       </Heading>
       <FlexRow>
         <FlexCol xs={0} m={3}></FlexCol>
@@ -25,4 +25,4 @@ const QuestionThree = ({ questionStep, nextStep }: any) => {
   );
 };
 
-export default QuestionThree;
+export default QuestionFive;
