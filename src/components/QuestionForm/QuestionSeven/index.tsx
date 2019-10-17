@@ -2,10 +2,8 @@ import React from 'react';
 import { Heading, FlexCol, FlexRow } from '@zopauk/react-components';
 import SButton from '../../Button';
 import Layout from '../Layout';
-import { useHistory } from 'react-router-dom';
 
 const QuestionSeven = ({ questionStep, nextStep }: any) => {
-  let history = useHistory();
   return (
     <Layout active={questionStep === 7}>
       <Heading color={'#FFFFFF'} as={'h3'}>

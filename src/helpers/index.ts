@@ -5,13 +5,13 @@ export const generateIsaType = (answers: any) => {
   // answers.forEach((answer: any) => {});
 };
 
-const ISA_TYPES = [
-  'Stocks & Shares',
-  'Cash',
-  'Innovative',
-  'Lifetime',
-  'Junior'
-];
+// const ISA_TYPES = [
+//   'Stocks & Shares',
+//   'Cash',
+//   'Innovative',
+//   'Lifetime',
+//   'Junior'
+// ];
 
 const questionOne = (question: any) => {
   let isa = '';
