@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { GlobalStyles, Fonts } from '@zopauk/react-components';
 import styled from 'styled-components';
-import QuestionOne from './components/QuestionForm/QuestionOne';
-import QuestionTwo from './components/QuestionForm/QuestionTwo';
-import QuestionThree from './components/QuestionForm/QuestionThree';
-import QuestionFour from './components/QuestionForm/QuestionFour';
-import QuestionFive from './components/QuestionForm/QuestionFive';
-import QuestionSix from './components/QuestionForm/QuestionSix';
-import QuestionSeven from './components/QuestionForm/QuestionSeven';
+import QuestionForm from './containers/QuestionForm';
 import Confirmation from './components/Confirmation';
 import TopNav from './components/TopNav';
 import LandingPage from './components/LandingPage';
@@ -36,15 +30,7 @@ const App = () => {
           </Route>
 
           <Route exact path='/steps'>
-            <FormLayout>
-              <QuestionOne questionStep={questionStep} nextStep={nextStep} />
-              <QuestionTwo questionStep={questionStep} nextStep={nextStep} />
-              <QuestionThree questionStep={questionStep} nextStep={nextStep} />
-              <QuestionFour questionStep={questionStep} nextStep={nextStep} />
-              <QuestionFive questionStep={questionStep} nextStep={nextStep} />
-              <QuestionSix questionStep={questionStep} nextStep={nextStep} />
-              <QuestionSeven questionStep={questionStep} nextStep={nextStep} />
-            </FormLayout>
+            <QuestionForm nextStep={nextStep} questionStep={questionStep} />
           </Route>
 
           <Route exact path='/confirmation'>

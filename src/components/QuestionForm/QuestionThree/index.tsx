@@ -12,10 +12,10 @@ const QuestionThree = ({ questionStep, nextStep }: any) => {
       <FlexRow>
         <FlexCol xs={0} m={3}></FlexCol>
         <FlexCol xs={12} m={6} align={'center'} style={{ margin: 'auto' }}>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(3, 'a')}>
             Yes
           </SButton>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(3, 'b')}>
             No
           </SButton>
         </FlexCol>

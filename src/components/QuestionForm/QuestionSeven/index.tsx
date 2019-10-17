@@ -14,28 +14,16 @@ const QuestionSeven = ({ questionStep, nextStep }: any) => {
       <FlexRow>
         <FlexCol xs={0} m={3}></FlexCol>
         <FlexCol xs={12} m={6} align={'center'} style={{ margin: 'auto' }}>
-          <SButton
-            styling='secondary'
-            onClick={() => history.push('/confirmation')}
-          >
+          <SButton styling='secondary' onClick={() => nextStep(7, 'a')}>
             I'm Superman
           </SButton>
-          <SButton
-            styling='secondary'
-            onClick={() => history.push('/confirmation')}
-          >
+          <SButton styling='secondary' onClick={() => nextStep(7, 'b')}>
             I'm pretty good
           </SButton>
-          <SButton
-            styling='secondary'
-            onClick={() => history.push('/confirmation')}
-          >
+          <SButton styling='secondary' onClick={() => nextStep(7, 'c')}>
             I'm trying
           </SButton>
-          <SButton
-            styling='secondary'
-            onClick={() => history.push('/confirmation')}
-          >
+          <SButton styling='secondary' onClick={() => nextStep(7, 'd')}>
             I have no idea
           </SButton>
         </FlexCol>

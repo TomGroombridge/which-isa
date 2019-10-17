@@ -13,16 +13,16 @@ const QuestionTwo = ({ questionStep, nextStep }: any) => {
       <FlexRow>
         <FlexCol xs={0} m={3}></FlexCol>
         <FlexCol xs={12} m={6} align={'center'} style={{ margin: 'auto' }}>
-          <GoalButton styling='secondary' onClick={nextStep}>
+          <GoalButton styling='secondary' onClick={() => nextStep(2, 'a')}>
             Buying a House
           </GoalButton>
-          <GoalButton styling='secondary' onClick={nextStep}>
+          <GoalButton styling='secondary' onClick={() => nextStep(2, 'b')}>
             Planning a Trip
           </GoalButton>
-          <GoalButton styling='secondary' onClick={nextStep}>
+          <GoalButton styling='secondary' onClick={() => nextStep(2, 'c')}>
             Having a Family
           </GoalButton>
-          <GoalButton styling='secondary' onClick={nextStep}>
+          <GoalButton styling='secondary' onClick={() => nextStep(2, 'd')}>
             Other
           </GoalButton>
         </FlexCol>

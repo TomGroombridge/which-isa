@@ -12,22 +12,22 @@ const QuestionOne = ({ questionStep, nextStep }: any) => {
       <FlexRow>
         <FlexCol xs={0} m={3}></FlexCol>
         <FlexCol xs={12} m={6} align={'center'} style={{ margin: 'auto' }}>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(1, 'a')}>
             Teens
           </SButton>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(1, 'b')}>
             20s
           </SButton>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(1, 'c')}>
             30s
           </SButton>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(1, 'd')}>
             40s
           </SButton>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(1, 'e')}>
             50s
           </SButton>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(1, 'f')}>
             Older
           </SButton>
         </FlexCol>

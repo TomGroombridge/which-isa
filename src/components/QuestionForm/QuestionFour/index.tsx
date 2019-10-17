@@ -12,16 +12,16 @@ const QuestionFour = ({ questionStep, nextStep }: any) => {
       <FlexRow>
         <FlexCol xs={0} m={3}></FlexCol>
         <FlexCol xs={12} m={6} align={'center'} style={{ margin: 'auto' }}>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(4, 'a')}>
             Not very
           </SButton>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(4, 'b')}>
             A little
           </SButton>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(4, 'c')}>
             I enjoy a flutter
           </SButton>
-          <SButton styling='secondary' onClick={nextStep}>
+          <SButton styling='secondary' onClick={() => nextStep(4, 'd')}>
             Everything on red
           </SButton>
         </FlexCol>
