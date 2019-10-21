@@ -11,6 +11,7 @@ import SButton from '../../Button';
 import { generateIsaType } from '../../../helpers';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const EmailAdress = ({ questionStep, answers }: any) => {
   let history = useHistory();
@@ -19,11 +20,25 @@ const EmailAdress = ({ questionStep, answers }: any) => {
   const handleSubmit = () => {
     const isaType = generateIsaType(answers);
     console.log('isaType', isaType);
-    history.push('/confirmation');
+    const url = process.env.REACT_APP_API_URL || '';
+    axios(url, {
+      method: 'post',
+      data: {
+        email: email
+      },
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then(() => {
+        history.push('/confirmation');
+      })
+      .catch((error: any) => {
+        console.log(error);
+      });
   };
 
   const handleChange = (e: any) => {
-    console.log('adsdas', e.target.value);
     setEmail(e.target.value);
   };
 
