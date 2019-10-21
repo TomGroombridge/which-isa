@@ -7,11 +7,9 @@ import QuestionFour from '../../components/QuestionForm/QuestionFour';
 import QuestionFive from '../../components/QuestionForm/QuestionFive';
 import QuestionSix from '../../components/QuestionForm/QuestionSix';
 import QuestionSeven from '../../components/QuestionForm/QuestionSeven';
-import { generateIsaType } from '../../helpers';
-import { useHistory } from 'react-router-dom';
+import EmailAdress from '../../components/QuestionForm/EmailAdress';
 
 const QuestionForm = ({ nextStep, questionStep }: any) => {
-  let history = useHistory();
   const initialAnswers = [
     { question: '1', answer: '' },
     { question: '2', answer: '' },
@@ -29,14 +27,6 @@ const QuestionForm = ({ nextStep, questionStep }: any) => {
     nextStep();
   };
 
-  const handleFormSubmit = (question: number, answer: string) => {
-    answers[question - 1].answer = answer;
-    setAnswers(answers);
-    const isaType = generateIsaType(answers);
-    console.log('isaType', isaType);
-    history.push('/confirmation');
-  };
-
   return (
     <FormLayout>
       <QuestionOne questionStep={questionStep} nextStep={handleAnswerUpdate} />
@@ -48,7 +38,11 @@ const QuestionForm = ({ nextStep, questionStep }: any) => {
       <QuestionFour questionStep={questionStep} nextStep={handleAnswerUpdate} />
       <QuestionFive questionStep={questionStep} nextStep={handleAnswerUpdate} />
       <QuestionSix questionStep={questionStep} nextStep={handleAnswerUpdate} />
-      <QuestionSeven questionStep={questionStep} nextStep={handleFormSubmit} />
+      <QuestionSeven
+        questionStep={questionStep}
+        nextStep={handleAnswerUpdate}
+      />
+      <EmailAdress questionStep={questionStep} answers={answers} />
     </FormLayout>
   );
 };

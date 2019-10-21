@@ -16,22 +16,29 @@ const LandingPage = ({ setQuestionStep }: any) => {
 
   return (
     <Layout active={true}>
-      <SeedIcon />
-      <Heading color={'#FFFFFF'} as={'h3'} style={{ marginTop: '24px' }}>
-        Discover the right ISA for you
-      </Heading>
-      <Text color={'#FFFFFF'}>
-        Finding the right ISA can't always be easy so we've got a few short
-        questions to help you narrow down the right ISA for you.
-      </Text>
       <FlexRow style={{ marginTop: '24px' }}>
-        <FlexCol xs={0} m={3}></FlexCol>
         <FlexCol xs={12} m={6} align={'center'} style={{ margin: 'auto' }}>
+          <SeedIcon />
+          <Heading color={'#FFFFFF'} as={'h3'} style={{ marginTop: '24px' }}>
+            Discover the right ISA for you
+          </Heading>
+          <Text color={'#FFFFFF'}>
+            Finding the right ISA can't always be easy so we've got a few short
+            questions to help you narrow down the right ISA for you.
+          </Text>
+        </FlexCol>
+      </FlexRow>
+      <FlexRow>
+        <FlexCol
+          xs={12}
+          m={6}
+          align={'center'}
+          style={{ margin: 'auto', marginTop: '24px' }}
+        >
           <SButton styling='secondary' onClick={redirect}>
             Get Started
           </SButton>
         </FlexCol>
-        <FlexCol xs={0} m={3}></FlexCol>
       </FlexRow>
     </Layout>
   );

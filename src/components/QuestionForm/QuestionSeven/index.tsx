@@ -7,7 +7,7 @@ const QuestionSeven = ({ questionStep, nextStep }: any) => {
   return (
     <Layout active={questionStep === 7}>
       <Heading color={'#FFFFFF'} as={'h3'}>
-        How in control of you finances are you?
+        How in control of your finances are you?
       </Heading>
       <FlexRow>
         <FlexCol xs={0} m={3}></FlexCol>

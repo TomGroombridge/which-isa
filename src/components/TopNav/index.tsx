@@ -19,7 +19,11 @@ const SHeading = styled(Heading)`
   top: 10px;
   position: relative;
   margin-top: 0px;
+  width: fit-content;
   color: ${colors.neutral.white};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default TopNav;
