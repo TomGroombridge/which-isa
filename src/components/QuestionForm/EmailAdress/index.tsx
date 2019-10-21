@@ -20,7 +20,8 @@ const EmailAdress = ({ questionStep, answers }: any) => {
   const handleSubmit = () => {
     const isaType = generateIsaType(answers);
     console.log('isaType', isaType);
-    axios('http://localhost:3001/sendEmail', {
+    const url = process.env.REACT_APP_API_URL || '';
+    axios(url, {
       method: 'post',
       data: {
         email: email
