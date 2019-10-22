@@ -17,10 +17,11 @@ import EnvelopeIcon from '../../Icons/EnvelopeIcon';
 const EmailAdress = ({ questionStep, answers }: any) => {
   let history = useHistory();
   const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = () => {
+    setLoading(true);
     const isaType = generateIsaType(answers);
-    console.log('isaType', isaType);
     const url = process.env.REACT_APP_API_URL || '';
     axios(url, {
       method: 'post',
@@ -33,9 +34,11 @@ const EmailAdress = ({ questionStep, answers }: any) => {
       }
     })
       .then(() => {
+        setLoading(false);
         history.push('/confirmation');
       })
       .catch((error: any) => {
+        setLoading(false);
         console.log(error);
       });
   };
@@ -56,8 +59,12 @@ const EmailAdress = ({ questionStep, answers }: any) => {
           <TextField
             inputProps={{ name: 'email', value: email, onChange: handleChange }}
           />
-          <SButton styling='secondary' onClick={handleSubmit}>
-            Continue
+          <SButton
+            styling='secondary'
+            onClick={handleSubmit}
+            disabled={loading}
+          >
+            {loading ? 'Thinking...' : 'Continue'}
           </SButton>
         </SFlexCol>
       </FlexRow>
