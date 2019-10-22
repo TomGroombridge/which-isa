@@ -12,6 +12,7 @@ import { generateIsaType } from '../../../helpers';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
+import EnvelopeIcon from '../../Icons/EnvelopeIcon';
 
 const EmailAdress = ({ questionStep, answers }: any) => {
   let history = useHistory();
@@ -44,7 +45,8 @@ const EmailAdress = ({ questionStep, answers }: any) => {
 
   return (
     <Layout active={questionStep === 8}>
-      <Heading color={'#FFFFFF'} as={'h3'}>
+      <EnvelopeIcon />
+      <Heading color={'#FFFFFF'} as={'h3'} style={{ marginTop: '24px' }}>
         Please enter your email address to receive your results.
       </Heading>
       <FlexRow>
@@ -66,6 +68,11 @@ const SFlexCol = styled(FlexCol)`
   > div {
     margin: auto;
     margin-bottom: 24px;
+    > input {
+      background: transparent;
+      border: 2px solid #ffffff;
+      color: #ffffff;
+    }
   }
 `;
 

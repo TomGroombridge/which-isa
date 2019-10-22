@@ -9,7 +9,7 @@ import LandingPage from './components/LandingPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
-  const [questionStep, setQuestionStep] = useState(1);
+  const [questionStep, setQuestionStep] = useState(8);
 
   const nextStep = () => {
     const stepCount = questionStep + 1;
