@@ -10,8 +10,7 @@ const QuestionOne = ({ questionStep, nextStep }: any) => {
         How old are you?
       </Heading>
       <FlexRow>
-        <FlexCol xs={0} m={3}></FlexCol>
-        <FlexCol xs={12} m={6} align={'center'} style={{ margin: 'auto' }}>
+        <FlexCol xs={10} m={6} align={'center'} style={{ margin: 'auto' }}>
           <SButton styling='secondary' onClick={() => nextStep(1, 'a')}>
             Teens
           </SButton>
@@ -31,7 +30,6 @@ const QuestionOne = ({ questionStep, nextStep }: any) => {
             Older
           </SButton>
         </FlexCol>
-        <FlexCol xs={0} m={3}></FlexCol>
       </FlexRow>
     </Layout>
   );

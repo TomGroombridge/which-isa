@@ -10,8 +10,7 @@ const QuestionFive = ({ questionStep, nextStep }: any) => {
         Do you own a property already?
       </Heading>
       <FlexRow>
-        <FlexCol xs={0} m={3}></FlexCol>
-        <FlexCol xs={12} m={6} align={'center'} style={{ margin: 'auto' }}>
+        <FlexCol xs={10} m={6} align={'center'} style={{ margin: 'auto' }}>
           <SButton styling='secondary' onClick={() => nextStep(5, 'a')}>
             Yes
           </SButton>
@@ -19,7 +18,6 @@ const QuestionFive = ({ questionStep, nextStep }: any) => {
             No
           </SButton>
         </FlexCol>
-        <FlexCol xs={0} m={3}></FlexCol>
       </FlexRow>
     </Layout>
   );

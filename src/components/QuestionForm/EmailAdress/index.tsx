@@ -50,7 +50,7 @@ const EmailAdress = ({ questionStep, answers }: any) => {
         Please enter your email address to receive your results.
       </Heading>
       <FlexRow>
-        <SFlexCol xs={12} m={6} align={'center'} style={{ margin: 'auto' }}>
+        <SFlexCol xs={10} m={6} align={'center'} style={{ margin: 'auto' }}>
           <Text color={'#FFFFFF'}>Email</Text>
           <TextField
             inputProps={{ name: 'email', value: email, onChange: handleChange }}

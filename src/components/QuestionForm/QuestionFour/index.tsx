@@ -10,8 +10,7 @@ const QuestionFour = ({ questionStep, nextStep }: any) => {
         How risky are you feeling?
       </Heading>
       <FlexRow>
-        <FlexCol xs={0} m={3}></FlexCol>
-        <FlexCol xs={12} m={6} align={'center'} style={{ margin: 'auto' }}>
+        <FlexCol xs={10} m={6} align={'center'} style={{ margin: 'auto' }}>
           <SButton styling='secondary' onClick={() => nextStep(4, 'a')}>
             Not very
           </SButton>
@@ -25,7 +24,6 @@ const QuestionFour = ({ questionStep, nextStep }: any) => {
             Everything on red
           </SButton>
         </FlexCol>
-        <FlexCol xs={0} m={3}></FlexCol>
       </FlexRow>
     </Layout>
   );

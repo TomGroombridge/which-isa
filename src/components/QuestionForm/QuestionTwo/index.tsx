@@ -11,8 +11,7 @@ const QuestionTwo = ({ questionStep, nextStep }: any) => {
         What is your main financial goal?
       </Heading>
       <FlexRow>
-        <FlexCol xs={0} m={3}></FlexCol>
-        <FlexCol xs={12} m={6} align={'center'} style={{ margin: 'auto' }}>
+        <FlexCol xs={10} m={6} align={'center'} style={{ margin: 'auto' }}>
           <GoalButton styling='secondary' onClick={() => nextStep(2, 'a')}>
             Buying a House
           </GoalButton>
@@ -26,7 +25,6 @@ const QuestionTwo = ({ questionStep, nextStep }: any) => {
             Other
           </GoalButton>
         </FlexCol>
-        <FlexCol xs={0} m={3}></FlexCol>
       </FlexRow>
     </Layout>
   );
