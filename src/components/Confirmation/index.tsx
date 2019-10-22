@@ -4,13 +4,14 @@ import { Heading, FlexRow, FlexCol, Text } from '@zopauk/react-components';
 import ArrowUpIcon from '../Icons/ArrowUpIcon';
 import EarlyBirdIcon from '../Icons/EarlyBirdIcon';
 import SButton from '../Button';
+import copy from 'copy-to-clipboard';
 
 const Confirmation = () => {
   const [buttonText, setButtonText] = useState('Copy Link');
 
   const handleClick = () => {
     setButtonText('Copied...');
-    navigator.clipboard.writeText('https://which-isa.herokuapp.com');
+    copy('https://which-isa.herokuapp.com');
   };
   return (
     <Layout active={true}>
