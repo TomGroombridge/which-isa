@@ -25,7 +25,8 @@ const EmailAdress = ({ questionStep, answers }: any) => {
     axios(url, {
       method: 'post',
       data: {
-        email: email
+        email: email,
+        type: isaType
       },
       headers: {
         'content-type': 'application/json'
