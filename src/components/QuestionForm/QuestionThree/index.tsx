@@ -7,7 +7,7 @@ const QuestionThree = ({ questionStep, nextStep }: any) => {
   return (
     <Layout active={questionStep === 3}>
       <Heading color={'#FFFFFF'} as={'h3'}>
-        Will you need access to your investment quickly?
+        Will you need this money in the next 5 years?
       </Heading>
       <FlexRow>
         <FlexCol xs={10} m={6} align={'center'} style={{ margin: 'auto' }}>

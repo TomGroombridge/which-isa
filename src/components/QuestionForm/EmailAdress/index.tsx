@@ -18,33 +18,43 @@ const EmailAdress = ({ questionStep, answers }: any) => {
   let history = useHistory();
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = () => {
-    setLoading(true);
-    const isaType = generateIsaType(answers);
-    const url = process.env.REACT_APP_API_URL || '';
-    axios(url, {
-      method: 'post',
-      data: {
-        email: email,
-        type: isaType
-      },
-      headers: {
-        'content-type': 'application/json'
-      }
-    })
-      .then(() => {
-        setLoading(false);
-        history.push('/confirmation');
+    if (handleValidation()) {
+      setError(false);
+      setLoading(true);
+      const isaType = generateIsaType(answers);
+      const url = process.env.REACT_APP_API_URL || '';
+      axios(url, {
+        method: 'post',
+        data: {
+          email: email,
+          type: isaType
+        },
+        headers: {
+          'content-type': 'application/json'
+        }
       })
-      .catch((error: any) => {
-        setLoading(false);
-        console.log(error);
-      });
+        .then(() => {
+          setLoading(false);
+          history.push('/confirmation');
+        })
+        .catch((error: any) => {
+          setLoading(false);
+        });
+    } else {
+      setError(true);
+    }
   };
 
   const handleChange = (e: any) => {
     setEmail(e.target.value);
+  };
+
+  const handleValidation = () => {
+    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/; // tslint:disable
+    return regex.test(email);
   };
 
   return (
@@ -57,8 +67,18 @@ const EmailAdress = ({ questionStep, answers }: any) => {
         <SFlexCol xs={10} m={6} align={'center'} style={{ margin: 'auto' }}>
           <Text color={'#FFFFFF'}>Email</Text>
           <TextField
-            inputProps={{ name: 'email', value: email, onChange: handleChange }}
+            inputProps={{
+              name: 'email',
+              value: email,
+              onChange: handleChange,
+              onBlur: handleValidation
+            }}
           />
+          {error && (
+            <Text as='p' color='#EE0505' style={{ marginBottom: '24px' }}>
+              Email address is not valid
+            </Text>
+          )}
           <SButton
             styling='secondary'
             onClick={handleSubmit}

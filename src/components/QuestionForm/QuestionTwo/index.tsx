@@ -16,12 +16,15 @@ const QuestionTwo = ({ questionStep, nextStep }: any) => {
             Buying my first house
           </GoalButton>
           <GoalButton styling='secondary' onClick={() => nextStep(2, 'b')}>
-            Planning a trip
+            Saving for retirement
           </GoalButton>
           <GoalButton styling='secondary' onClick={() => nextStep(2, 'c')}>
-            Having a family
+            Planning a trip
           </GoalButton>
           <GoalButton styling='secondary' onClick={() => nextStep(2, 'd')}>
+            Having a family
+          </GoalButton>
+          <GoalButton styling='secondary' onClick={() => nextStep(2, 'e')}>
             Other
           </GoalButton>
         </FlexCol>
