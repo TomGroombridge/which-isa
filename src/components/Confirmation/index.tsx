@@ -11,7 +11,7 @@ const Confirmation = () => {
 
   const handleClick = () => {
     setButtonText('Copied...');
-    copy('https://which-isa.herokuapp.com');
+    copy('http://pastuso.co.uk');
   };
   return (
     <Layout active={true}>
