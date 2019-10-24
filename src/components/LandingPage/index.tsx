@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Heading, FlexCol, FlexRow, Text } from '@zopauk/react-components';
 import SButton from '../Button';
 import { useHistory } from 'react-router-dom';
 import Layout from '../QuestionForm/Layout';
 import SeedIcon from '../Icons/SeedIcon';
+import ReactGA from 'react-ga';
 
 const LandingPage = ({ setQuestionStep }: any) => {
+  useEffect(() => {
+    ReactGA.pageview('/LandingPage');
+  }, []);
   let history = useHistory();
 
   setQuestionStep(1);

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import QuestionOne from '../../components/QuestionForm/QuestionOne';
 import QuestionTwo from '../../components/QuestionForm/QuestionTwo';
@@ -8,8 +8,13 @@ import QuestionFive from '../../components/QuestionForm/QuestionFive';
 import QuestionSix from '../../components/QuestionForm/QuestionSix';
 import QuestionSeven from '../../components/QuestionForm/QuestionSeven';
 import EmailAdress from '../../components/QuestionForm/EmailAdress';
+import ReactGA from 'react-ga';
 
 const QuestionForm = ({ nextStep, questionStep }: any) => {
+  useEffect(() => {
+    ReactGA.pageview('/Steps');
+  }, []);
+
   const initialAnswers = [
     { question: '1', answer: '' },
     { question: '2', answer: '' },
