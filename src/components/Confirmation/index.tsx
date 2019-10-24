@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../QuestionForm/Layout';
 import { Heading, FlexRow, FlexCol, Text } from '@zopauk/react-components';
 import ArrowUpIcon from '../Icons/ArrowUpIcon';
 import EarlyBirdIcon from '../Icons/EarlyBirdIcon';
 import SButton from '../Button';
 import copy from 'copy-to-clipboard';
+import ReactGA from 'react-ga';
 
 const Confirmation = () => {
+  useEffect(() => {
+    ReactGA.pageview('/Confirmation');
+  }, []);
   const [buttonText, setButtonText] = useState('Copy Link');
 
   const handleClick = () => {

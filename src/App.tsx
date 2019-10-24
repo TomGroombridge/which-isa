@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { GlobalStyles, Fonts } from '@zopauk/react-components';
 import styled from 'styled-components';
@@ -7,9 +7,14 @@ import Confirmation from './components/Confirmation';
 import TopNav from './components/TopNav';
 import LandingPage from './components/LandingPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ReactGA from 'react-ga';
 
 const App = () => {
   const [questionStep, setQuestionStep] = useState(1);
+
+  useEffect(() => {
+    ReactGA.initialize('UA-150815452-1');
+  }, []);
 
   const nextStep = () => {
     const stepCount = questionStep + 1;

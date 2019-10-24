@@ -13,6 +13,7 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 import EnvelopeIcon from '../../Icons/EnvelopeIcon';
+import ReactGA from 'react-ga';
 
 const EmailAdress = ({ questionStep, answers }: any) => {
   let history = useHistory();
@@ -37,6 +38,10 @@ const EmailAdress = ({ questionStep, answers }: any) => {
         }
       })
         .then(() => {
+          ReactGA.event({
+            category: 'SubmitForm',
+            action: 'Submit Email Form'
+          });
           setLoading(false);
           history.push('/confirmation');
         })
