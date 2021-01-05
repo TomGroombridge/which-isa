@@ -9,7 +9,7 @@
     "@types/react-router-dom": "^5.1.0",
     "@types/styled-components": "^4.1.19",
     "@zopauk/react-components": "^2.3.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "copy-to-clipboard": "^3.2.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
